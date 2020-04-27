@@ -1,16 +1,11 @@
 <div class="sidebar_title icon__Uhybrid01"> 混合云 UHybrid</div>
+<<<<<<< HEAD
+<<<<<<< HEAD
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 * 产品介绍
-=======
-=======
->>>>>>> 19cd8d2212504b42e826b8d88b3191e9b3dda781
-* [概览](compute/uhybrid/overview)
-* [产品介绍]
->>>>>>> 19cd8d2212504b42e826b8d88b3191e9b3dda781
-  * [产品架构](compute/uhybrid/introduction/product_architecture)
+>* [产品架构](compute/uhybrid/introduction/product_architecture)
   * [核心优势](compute/uhybrid/introduction/core_advantages)
   * [产品对比](compute/uhybrid/introduction/contrast)
   * [应用场景](compute/uhybrid/introduction/case)
