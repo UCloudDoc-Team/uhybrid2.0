@@ -3,7 +3,7 @@
 
 
 * 产品介绍
-  * [产品架构](compute/uhybrid/fees/resource_fees)
+  * [产品架构](compute/uhybrid2.0/introduction/product_architecture)
   * [核心优势](compute/uhybrid/fees/network_fees)
   * [产品对比](compute/uhybrid/fees/service_fees)
   * [应用场景](compute/uhybrid/fees/service_fees)
