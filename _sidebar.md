@@ -2,7 +2,7 @@
 
 
 * 产品介绍
-  * [产品架构](compute/uhybrid2.0/introduction/product_architecture)
+  * [产品架构](/uhybrid2.0/introduction/product_architecture)
   * [核心优势](compute/uhybrid2.0/introduction/core_advantages)
   * [产品对比](compute/uhybrid2.0/introduction/contrast)
   * [应用场景](compute/uhybrid2.0/introduction/case)
