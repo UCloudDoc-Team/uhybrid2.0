@@ -1,7 +1,5 @@
 # UHybrid2.0 
 
-
-
 * 产品介绍
   * [产品架构](/uhybrid2.0/introduction/product_architecture)
   * [核心优势](/uhybrid2.0/fees/network_fees)
