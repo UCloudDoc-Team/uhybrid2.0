@@ -1,5 +1,4 @@
 <div class="sidebar_title icon__Uhybrid01"> 混合云 UHybrid</div>
-
 * [概览](/uhybrid2.0/README)
 * 产品介绍
   * [产品架构](/uhybrid2.0/introduction/product_architecture)
@@ -7,9 +6,9 @@
   * [产品对比](/uhybrid2.0/introduction/contrast)
   * [应用场景](/uhybrid2.0/introduction/case)
   * 产品分类介绍
-    * [资源类产品](/uhybrid2.0/product_classify_int/resource_int)
-    * [网络类产品](/uhybrid2.0/product_classify_int/network_int)
-    * [服务类产品](/uhybrid2.0/product_classify_int/server_int)
+    * [资源类产品](/uhybrid2.0/introduction/product_classify_int/resource_int)
+    * [网络类产品](/uhybrid2.0/introduction/product_classify_int/network_int)
+    * [服务类产品](/uhybrid2.0/introduction/product_classify_int/server_int)
 * 计费
   * [资源类计费方式](/uhybrid2.0/fees/resource_fees)
   * [网络类计费方式](/uhybrid2.0/fees/network_fees)
