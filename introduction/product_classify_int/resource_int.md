@@ -10,7 +10,7 @@
 
 \* **支持机柜自助预留**
 
-用户可以选择机柜进行付费预留，详情见[计费规则](https://docs.ucloud.cn/compute/uhybrid/ucabinet/price)
+用户可以选择机柜进行付费预留
 
 \* **支持机柜自助开电/关电**
 
