@@ -2,9 +2,9 @@
 
 * 产品介绍
   * [产品架构](/uhybrid2.0/introduction/product_architecture)
-  * [核心优势](/uhybrid2.0/fees/network_fees)
-  * [产品对比](/uhybrid2.0/fees/service_fees)
-  * [应用场景](/uhybrid2.0/fees/service_fees)
+  * [核心优势](/uhybrid2.0/introduction/core_advantages)
+  * [产品对比](/uhybrid2.0/introduction/contrast)
+  * [应用场景](/uhybrid2.0/introduction/case)
   * 产品分类介绍
     * [资源类产品](/uhybrid2.0/introduction/product_classify_int/resource_int)
     * [网络类产品](/uhybrid2.0/introduction/product_classify_int/network_int)
