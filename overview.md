@@ -5,7 +5,7 @@
   * [核心优势](compute/uhybrid2.0/introduction/core_advantages)
   * [产品对比](compute/uhybrid2.0/introduction/contrast)
   * [应用场景](compute/uhybrid2.0/introduction/case)
-  * 产品分类介绍
+  * 分类产品介绍
     * [资源类产品](compute/uhybrid2.0/introduction/product_classify_int/resource_int)
     * [网络类产品](compute/uhybrid2.0/introduction/product_classify_int/network_int)
 * 计费
