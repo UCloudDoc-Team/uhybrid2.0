@@ -11,7 +11,7 @@
   * [应用场景](/uhybrid2.0/introduction/case)
   * 分类产品介绍
     * [资源类产品](/uhybrid2.0/introduction/product_classify_int/resource_int)
-    * [网络类产品](/uhybrid2.0/introduction/product_classify_int/resource_int)
+    * [网络类产品](/uhybrid2.0/introduction/product_classify_int/bandwidth_int)
 * 计费
   * [资源类计费方式](/uhybrid2.0/fees/resource_fees)
   * [网络类计费方式](/uhybrid2.0/fees/network_fees)
