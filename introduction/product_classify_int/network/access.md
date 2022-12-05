@@ -189,7 +189,7 @@ UCloud侧可以通过BGP下发默认路由给用户当作北向默认网关，�
 
 ## STEP5 项目验收
 > 主要用于介绍互联网带宽引入后指导客户完成产品测试及验收。
-> 
+
 ### 一、对接端口状态验：
 包括端口up/down、端口错误包、光口情况下端口收发光、电口情况下对应的双工与速录协商情况、端口流量情况以及直连连通性测试
 #### 1、检查项：端口up/down
@@ -201,6 +201,7 @@ UCloud侧可以通过BGP下发默认路由给用户当作北向默认网关，�
  Duplex: FULL, Negotiation: DISABLE
  Last physical up time : 2021-09-07 18:56:45
  Last physical down time : 2021-09-07 18:47:18
+ 
 **端口UP;**
 **up/down 时间戳与操作时间一致，无端口状态翻动情况**
 
@@ -259,6 +260,7 @@ Total Error: 0
  Current TX Power (dBm) :-1.98
  Default TX Power High Threshold (dBm) :1.00
  Default TX Power Low Threshold (dBm) :-9.00
+ 
  **两侧收发光均在正常范围内**
 
 #### 4、检查项：电口情况下对应的双工与速录协商情况
@@ -279,6 +281,7 @@ Port Mode: COMMON COPPER, Port Split: -
  100 packet(s) received
  0.00% packet loss
  round-trip min/avg/max = 1/1/3 ms
+ 
 **无丢包且时延稳定**
 
 
