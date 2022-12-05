@@ -17,8 +17,8 @@
   * [网络类计费方式](/uhybrid2.0/fees/network_fees)
   * [服务类计费方式](/uhybrid2.0/fees/service_fees)
 * 操作指南
-  * [控制台操作指南](/uhybrid2.0/operation_manual/console_om)
-  * [服务手册](/uhybrid2.0/operation_manual/service_om)
+  * [资源类-控制台操作指南](/uhybrid2.0/operation_manual/console_om)
+  * [资源类-服务清单](/uhybrid2.0/operation_manual/service_om)
 * 常见问题
   * [资源类常见问题](/uhybrid2.0/q&a/resource_q&a)
   * [网络类常见问题](/uhybrid2.0/q&a/network_q&a)
