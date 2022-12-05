@@ -187,7 +187,7 @@ UCloud侧可以通过BGP下发默认路由给用户当作北向默认网关，�
 
 ## STEP6 项目验收
 > 主要用于介绍互联网带宽引入后指导客户完成产品测试及验收。
-### 对接端口状态验：
+### 一、对接端口状态验：
 包括端口up/down、端口错误包、光口情况下端口收发光、电口情况下对应的双工与速录协商情况、端口流量情况以及直连连通性测试
 #### 1、检查项：端口up/down
 ##### 检查方法：
@@ -279,7 +279,70 @@ Port Mode: COMMON COPPER, Port Split: -
 **无丢包且时延稳定**
 
 
+### 二、 丢包率/延时指标测试
+- 本地终端设备测试连通性和延时
+打开本地终端执行PING命令，即可测试。
+![access_step51](/images/access_step51.png)
 
+- 第三方评测工具，如：基调/博睿测试
+主要用于国内传统互联网IDC 访问网页的性能、网络质量测试。
+![access_step52](/images/access_step52.png) 
+
+**进入企业版后可选择即时测试和持续测试**
+
+#### 即时测试
+![access_step53](/images/access_step53.png)
+![access_step54](/images/access_step54.png) 
+
+#### 持续测试
+![access_step55](/images/access_step55.png)
+ 
+#### 测试报告查看
+![access_step56](/images/access_step56.png)
+
+### 三、带宽、带宽吞吐量测试：
+互联网转接带宽接入完成后，您需要测试链路的性能，确保接入带宽可以满足您的业务需求。本文介绍通过Netperf和iPerf3工具测试带宽性能的方法。
+安装Netperf和iPerf3
+#### 1、安装Netperf
+##### 执行以下命令，下载Netperf安装包
+```python
+wget -c "https://codeload.github.com/HewlettPackard/netperf/tar.gz/netperf-2.5.0" -O netperf-2.5.0.tar.gz
+```
+##### 依次执行以下命令，安装Netperf
+```python
+tar -zxvf netperf-2.5.0.tar.gz
+cd netperf-netperf-2.5.0
+./configure 
+make 
+make install
+```
+##### 执行netperf -V或netserver -V，验证安装是否成功
+```python
+回显以下信息表示成功
+Netperf version 2.5.0
+```
+
+#### 2、安装iPerf3
+##### 执行以下命令，下载iPerf3
+```python
+yum install git -y  
+git clone https://github.com/esnet/iperf
+```
+##### 执行以下命令，安装iPerf3
+```python
+cd iperf
+./configure && make && make install && cd ..
+cd src
+ADD_PATH="$(pwd)" 
+PATH="${ADD_PATH}:${PATH}"
+export PATH
+```
+##### 执行iperf3 -v命令，验证安装是否成功
+```python
+系统回显以下信息时，表示安装成功。
+iperf 3.10.1+ (cJSON 1.7.13)
+Linux iZbp15y0zrhx2ry6vo1b4wZ 3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019 x86_64
+```
 ## STEP6 项目计费
 用户验收通过后， 产品运营针对运维提交的资源ID与销售确认计费事宜。计费内容包括 带宽费用、IP租赁费用、端口月租费用，具体详见网络类计费方式
 
