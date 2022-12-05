@@ -107,6 +107,7 @@ import-route static route-policy S-to-O //发布南向用户静态路由
 ```
 
 - 客户侧配置
+
 互联IP端口配置
 ```python
 interface 端口名称 //客户自定义三层口模式
@@ -133,10 +134,10 @@ ip route-static 0.0.0.0/0 客户端口 x.x.x.x  description To_UCloud
 - UCloud侧配置
 端口配置忽略，这里仅展示BGP部分配置，仅供参考！
 **UCloud侧BGP配置**
+
 ```python
 ip ip-prefix IN-IPP-客户名称-V4 index 10 permit {ipv4-address mask-length}
 ip ip-prefix IN-IPP-客户名称-V4 index 1000 deny 0.0.0.0 0 less-equal 32
-
 bgp 59077
 router-id 设备环回口IP
 group UCloud-to-客户名称-V4 external
@@ -182,6 +183,7 @@ peer  TO_UCloud_IPT-V4 advertise-ext-community
 peer x.x.x.x enable
 peer x.x.x.x group TO_UCloud_IPT-V4
 ```
+
 **客户北向路由配置**
 UCloud侧可以通过BGP下发默认路由给用户当作北向默认网关，鉴于客户内网的架构规划不同，特别是有多互联网线路备份接入场景；强烈建议客户北向路由自己定义配置方案
 
