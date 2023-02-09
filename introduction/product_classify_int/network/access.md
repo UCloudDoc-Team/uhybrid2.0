@@ -3,52 +3,19 @@
 ## STEP1 售前咨询
 >  [欢迎咨询](https://spt.ucloud.cn/30001)  —— 和专业售前咨询进入开通流程
 
-## STEP2 售前咨询
-### 1、测试资源对比
-为便于用户进行相关测试，UCloud提供如下三种方式的测试：
-|测试资源类型	|公有云主机测试	|混合云物理机测试	|特定需求组网测试
-| ---	| ---	| ---	| ---	
-|测试目标	|带宽、时延、丢包等	|带宽、时延、丢包等,综合测试，例如同时测试托管内外网	|带宽、时延、丢包等,进行相关的组网测试，例如设备线路等容灾测试
-|交付时间	|提交测试工单后，1个工作日	|提交测试工单后，已存资源环境，2个工作日,若需新建, 预计一周起步	|按照实际需求沟通，准备时间两周起步
-|配置	|2核/4G/10Mbps/系统按需	|万兆服务器/10Mbps	|万兆交换机/万兆服务器/外网带宽
-|数量	|默认1台，超出部分沟通	|默认1台，超出部分沟通	|按需搭建
-|测试时间	|一周	|一周	|一周
+
+##### 售前测试资源配额
+测试时间：7个工作日    
+测试带宽：5M  
+测试IP：4个  
 
 
-### 2、公有云主机/混合云物理机测试需求单
-BU填写-略
-### 3、特定需求组网测试
-BU填写-略
-### 4、售前测试资源规范
-测试时间：7个工作日
-测试带宽：5M
-测试IP：4个
-### 5、专线询价流程
-若涉及到专线，且需要UCloud负责代签对应专线，执行专线询价流程。
-BU关注-略
-### 6、公有云测试资源
-参考UCloud控制台对应的地域与可用区云主机资源。
-### 7、 物理机测试资源
-|可用区| 逻辑机房 |操作系统	| 数量
-| ---	| ---	| ---	| ---	
-|北京二B	|HB11	|CentOS 7.6 X64	|1
-|北京二B	|HB11	|CentOS 7.9 X64	|1
-|北京二B	|HB11	|Windows Server 2012 R2 Datacenter	|1
-|北京二C	|HB03	|CentOS 7.6 X64	|1
-|北京二C	|HB03	|Windows Server 2012 R2 Datacenter	|1
-|北京二E	|HB06	|CentOS Linux release 7.6.1810	|1
-|乌兰察布A	|HB13	|CentOS Linux release 7.9.2009 (Core)	|1
-|上海二C	|HD06	|CentOS 7.6 X64	|2
-|上海二C	|HD06	|Windows Server 2012 R2 Datacenter	|1
-|上海二A	|HD08	|CentOS Linux release 7.6.1810 (Core)	|1
-|广州二B	|HN02	|CentOS 7.6 X64	|1
-|广州二B	|HN02	|Windows 2012	|1
+## STEP2 需求确认
+请联系架构师进行需求确认
 
 
-## STEP3 需求确认
-架构师负责填写确认
 
-## STEP4 项目实施
+## STEP3 项目实施
 ### 项目实施前准备工作：
 **1）新托管用户需在控制台上填写对应的机柜开电、入室、机柜布线以及提交对应需求工单等，相关工作准备就绪后UCloud运维人员会联系用户进行联调，操作过程有疑问请联系对应的客户经理/运维人员寻求支持；
 2）存量托管用户新需求需在控制台上填写对应的入室（按照实际情况选择）、机柜布线以及提交对应需求工单等，相关工作准备就绪后UCloud运维人员会联系用户进行联调，操作过程有疑问请联系对应的客户经理/运维人员寻求支持；**
@@ -175,7 +142,7 @@ peer x.x.x.x group TO_UCloud_IPT-V4
 **客户北向路由配置**
 UCloud侧可以通过BGP下发默认路由给用户当作北向默认网关，鉴于客户内网的架构规划不同，特别是有多互联网线路备份接入场景；强烈建议客户北向路由自己定义配置方案
 
-## STEP5 项目验收
+## STEP4 项目验收
 > 主要用于介绍互联网带宽引入后指导客户完成产品测试及验收。
 
 ### 一、对接端口状态验：
@@ -189,7 +156,7 @@ UCloud侧可以通过BGP下发默认路由给用户当作北向默认网关，�
  Duplex: FULL, Negotiation: DISABLE
  Last physical up time : 2021-09-07 18:56:45
  Last physical down time : 2021-09-07 18:47:18
- 
+
 **端口UP;**
 **up/down 时间戳与操作时间一致，无端口状态翻动情况**
 
@@ -221,19 +188,19 @@ Total Error: 0
  Vendor Name :OEM
  Vendor Part Number :SFP+10G300MSR
  Ordering Name :
- 
+
 ————————————————————————————————————————————
 
  Manufacture information:
  Manu. Serial Number :STHC85SA2000042
  Manufacturing Date :2020-05-15
  Vendor Name :OEM
- 
+
 ————————————————————————————————————————————
 
  Alarm information:
  Non-Huawei-Ethernet-Switch-Certified Transceiver
- 
+
 ————————————————————————————————————————————
 
  Diagnostic information:
@@ -248,7 +215,7 @@ Total Error: 0
  Current TX Power (dBm) :-1.98
  Default TX Power High Threshold (dBm) :1.00
  Default TX Power Low Threshold (dBm) :-9.00
- 
+
  **两侧收发光均在正常范围内**
 
 #### 4、检查项：电口情况下对应的双工与速录协商情况
@@ -269,7 +236,7 @@ Port Mode: COMMON COPPER, Port Split: -
  100 packet(s) received
  0.00% packet loss
  round-trip min/avg/max = 1/1/3 ms
- 
+
 **无丢包且时延稳定**
 
 
@@ -290,7 +257,7 @@ Port Mode: COMMON COPPER, Port Split: -
 
 #### 持续测试
 ![access_step55](/images/access_step55.png)
- 
+
 #### 测试报告查看
 ![access_step56](/images/access_step56.png)
 
@@ -431,10 +398,10 @@ iperf3 -u -l 16 -b 100m -t 120 -c 192.168.100.1 -i 1 -p 16001 -A 1
 
 
 
-## STEP6 项目计费
+## STEP5 项目计费
 用户验收通过后， 产品运营针对运维提交的资源ID与销售确认计费事宜。计费内容包括 带宽费用、IP租赁费用、端口月租费用，具体详见网络类计费方式
 
-## STEP7 日常运维
+## STEP6 日常运维
 - 现场准备工作完成前提下，UCloud侧2个工作日完成对应的开通操作、带宽与IP等各类调整工作；
 - 提供7*24小时的技术支持和故障维修服务电话热线，15分钟的故障响应，重点用户提供VIP技术支持服务，其他业务需求一律咨询客户经理；
 - 主动网络维护提前72小时通知；
