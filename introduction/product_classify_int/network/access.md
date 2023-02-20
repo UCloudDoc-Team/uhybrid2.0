@@ -151,27 +151,31 @@ UCloud侧可以通过BGP下发默认路由给用户当作北向默认网关，�
 ##### 检查方法：
 > dis int 10ge 1/0/1 | in current state|up|down （端口按照实际情况替换）
 ##### 预期结果
+```python
 10GE1/0/1 current state : UP (ifindex: 53)
  Line protocol current state : UP
  Duplex: FULL, Negotiation: DISABLE
  Last physical up time : 2021-09-07 18:56:45
  Last physical down time : 2021-09-07 18:47:18
+```
 
-**端口UP;**
+**端口UP;**   
 **up/down 时间戳与操作时间一致，无端口状态翻动情况**
 
 #### 2、检查项：端口错误包
 ##### 检查方法：
 > dis int 10ge 1/0/1 | in Total Error
 ##### 预期结果
+```python
 Total Error: 0
+```
 **无错误包，若存在错误包，多次执行检查计数器不应增长**
 
 #### 3、检查项：光口情况下端口收发光
 ##### 检查方法：
 > dis int 10ge 1/0/1 tr ver
 ##### 预期结果
-
+```python
 10GE1/0/1 transceiver information:
 
 ————————————————————————————————————————————
@@ -215,28 +219,34 @@ Total Error: 0
  Current TX Power (dBm) :-1.98
  Default TX Power High Threshold (dBm) :1.00
  Default TX Power Low Threshold (dBm) :-9.00
-
+```
  **两侧收发光均在正常范围内**
 
 #### 4、检查项：电口情况下对应的双工与速录协商情况
 ##### 检查方法：
 > dis int ge 1/0/1
 ##### 预期结果
+```python
 Port Mode: COMMON COPPER, Port Split: -
- Speed: 1000, Loopback: NONE
- Duplex: FULL, Negotiation: ENABLE
+Speed: 1000, Loopback: NONE
+Duplex: FULL, Negotiation: ENABLE
+```
+
 **双工以及协商出对应端口/模块(光转电场景下）速率，采用自动协商端口无法up的情况下，可考虑关闭协商，强制双工与速率。**
+
+
 
 #### 5、检查项：连通性测试
 ##### 检查方法：
 > ping -a 172.20.200.6 -c 100 -m 50 172.20.200.5 (按需替换为对应的互联地址）
 ##### 预期结果
+```python
 --- 172.20.200.5 ping statistics ---
  100 packet(s) transmitted
  100 packet(s) received
  0.00% packet loss
  round-trip min/avg/max = 1/1/3 ms
-
+```
 **无丢包且时延稳定**
 
 
@@ -305,7 +315,7 @@ iperf 3.10.1+ (cJSON 1.7.13)
 Linux iZbp15y0zrhx2ry6vo1b4wZ 3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019 x86_64
 ```
 ##### 开启多队列功能
-假设与互联网转接产品相连的接口为eth0，在服务器端执行ethtool -L eth0 combined 4命令，开启多队列功能。执行命令后，系统回显以下信息：
+假设与互联网转接产品相连的接口为eth0，在服务器端执行`ethtool -L eth0 combined 4`命令，开启多队列功能。执行命令后，系统回显以下信息：
 ##### 开启网卡多队列
 ```python
 echo "ff" > /sys/class/net/eth0/queues/rx-0/rps_cpus
@@ -316,15 +326,16 @@ echo "ff" > /sys/class/net/eth0/queues/rx-3/rps_cpus
 
 ### 三、使用Netperf工具测试物理专线的包转发性能
 #### Netperf概述
-Netperf安装完成后会创建两个命令行工具：netserver（服务端：接收端工具）和netperf（客户端：发送端工具），主要参数说明如下表所示。
-|工具名称	|主要参数	|参数说明
-| ---	|---		|---	
-|netserver	|-p	|监听的端口号。
-|netperf	|-H	|IDC网络接入设备或ECS实例的IP地址。
-|netperf	|-p	|IDC网络接入设备或ECS实例的端口。
-|netperf	|-l	|运行时间。
-|netperf	|-t	|发送报文的协议类型：TCP_STREAM或UDP_STREAM。推荐使用UDP_STREAM。
-|netperf	|-m	|数据包大小: 测试pps（packet per second）时，建议设置为1;测试bps（bit per second）时，建议设置为1400。
+Netperf安装完成后会创建两个命令行工具：netserver（服务端：接收端工具）和netperf（客户端：发送端工具），主要参数说明如下表所示.  
+| 工具名称 | 主要参数 | 参数说明                                                                                          |
+| --------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| netserver | -p       | 监听的端口号。                                                                                 |
+| netperf   | -H       | IDC网络接入设备或ECS实例的IP地址。                                                       |
+| netperf   | -p       | IDC网络接入设备或ECS实例的端口。                                                         |
+| netperf   | -l       | 运行时间。                                                                                       |
+| netperf   | -t       | 发送报文的协议类型：TCP_STREAM或UDP_STREAM。推荐使用UDP_STREAM。                     |
+| netperf   | -m       | 数据包大小: 测试pps（packet per second）时，建议设置为1;测试bps（bit per second）时，建议设置为1400。 |   
+
 
 #### 分析测试结果
 客户端的netperf进程执行完毕后，会显示以下结果。通过发送成功的报文数除以测试时间，计算出测试链路的pps，即pps=发送成功的报文数÷测试时间。
@@ -337,15 +348,15 @@ bytes   bytes    secs            #      #   10^6bits/sec
 212992           10.00     1099999              0.88
 ```
 **显示结果中各字段含义如下表所示。**
-|字段	|含义
-| ---		| ---	
-|Socket Size	|缓冲区大小
-|Message Size	|数据包大小（Byte）
-|Elapsed Time	|测试时间（s）
-|Message Okay	|发送成功的报文数
-|Message Errors	|发送失败的报文数
-|Throughput	|网络吞吐量（Mbps）
 
+| 字段         | 含义             |
+| -------------- | ------------------ |
+| Socket Size    | 缓冲区大小    |
+| Message Size   | 数据包大小（Byte） |
+| Elapsed Time   | 测试时间（s） |
+| Message Okay   | 发送成功的报文数 |
+| Message Errors | 发送失败的报文数 |
+| Throughput     | 网络吞吐量（Mbps） |  
 
 
 ### 四、使用iPerf3测试物理专线的带宽
@@ -374,6 +385,7 @@ iperf3 -s -i 1 -p 16001
 
 ##### 2、客户端上执行iperf3 -u -I 16 -b 100m -t 120 -c server_ip -i 1 -p port -A 1命令
 **客户端执行**
+
 ```python
 iperf3 -u -l 16 -b 100m -t 120 -c 192.168.100.1 -i 1 -p 16001 -A 1
 ```
@@ -387,11 +399,12 @@ iperf3 -u -l 16 -b 100m -t 120 -c 192.168.100.1 -i 1 -p 16001 -A 1
 [  4]  Sent 30352  datagrams
 ```
 **显示结果中各字段含义如下表所示**
-|字段	|含义
-| ---		| ---	
-|Transfer	|传输的总数据量
-|Bandwidth	|带宽大小
-|Jitter	|抖动
+
+| 字段    | 含义         |
+| --------- | -------------- |
+| Transfer  | 传输的总数据量 |
+| Bandwidth | 带宽大小   |
+| Jitter    | 抖动         |
 
 **备注
 项目实施完毕后，客户默认有3个工作日的验收时间，验收期间有任何问题请联系对应架构师；如验收通过，第四个工作日开始执行项目计费。**
