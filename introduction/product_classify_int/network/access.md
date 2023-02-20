@@ -327,14 +327,15 @@ echo "ff" > /sys/class/net/eth0/queues/rx-3/rps_cpus
 ### 三、使用Netperf工具测试物理专线的包转发性能
 #### Netperf概述
 Netperf安装完成后会创建两个命令行工具：netserver（服务端：接收端工具）和netperf（客户端：发送端工具），主要参数说明如下表所示.  
-| 工具名称 | 主要参数 | 参数说明                                                                                          |
-| --------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| netserver | -p       | 监听的端口号。                                                                                 |
-| netperf   | -H       | IDC网络接入设备或ECS实例的IP地址。                                                       |
-| netperf   | -p       | IDC网络接入设备或ECS实例的端口。                                                         |
-| netperf   | -l       | 运行时间。                                                                                       |
-| netperf   | -t       | 发送报文的协议类型：TCP_STREAM或UDP_STREAM。推荐使用UDP_STREAM。                     |
-| netperf   | -m       | 数据包大小: 测试pps（packet per second）时，建议设置为1;测试bps（bit per second）时，建议设置为1400。 |   
+
+| 工具名称  | 主要参数 | 参数说明                                                     |
+| --------- | -------- | ------------------------------------------------------------ |
+| netserver | -p       | 监听的端口号。                                               |
+| netperf   | -H       | IDC网络接入设备或ECS实例的IP地址。                           |
+| netperf   | -p       | IDC网络接入设备或ECS实例的端口。                             |
+| netperf   | -l       | 运行时间。                                                   |
+| netperf   | -t       | 发送报文的协议类型：TCP_STREAM或UDP_STREAM。推荐使用UDP_STREAM。 |
+| netperf   | -m       | 数据包大小: 测试pps（packet per second）时，建议设置为1;测试bps（bit per second）时，建议设置为1400。 |
 
 
 #### 分析测试结果
